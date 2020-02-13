@@ -21,7 +21,7 @@ tags: [hackthebox, htb, re, ai]
 
 ---
 
--This was a really fun box and my first attempt at reverse engineering. I did a lot of research and sleepless nights. Finally it paid off. Without further ado, lets jump in.
+- This was a really fun box and my first attempt at reverse engineering. I did a lot of research and sleepless nights. Finally it paid off. Without further ado, lets jump in.
 
 ## PART 1 : INITIAL RECON
 
