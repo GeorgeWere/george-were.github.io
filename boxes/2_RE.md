@@ -63,7 +63,7 @@ Nmap done: 1 IP address (1 host up) scanned in 78.62 seconds
     * Port 445 : SMB
 
         * We have a *clock-skew of 1h06m32s* so if we are to do any form of time sensitive attacks such as kerberos we will have to sync our times.
----
+        
 
 ## PART 2 : PORT ENUMERATION
 
