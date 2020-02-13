@@ -7,7 +7,7 @@ tags: [hackthebox, htb, re, ai]
 ---
 # HTB AI (10.10.10.144) MACHINE WRITE-UP
 
-![80 AI Icon](./screenshots/14_ai/2_icon.png)
+![2 RE Icon](./screenshots/2_RE/2_icon.png)
 ---
 
 ### TABLE OF CONTENTS
