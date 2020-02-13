@@ -3,9 +3,10 @@ title: "HTB WRITE-UPS"
 layout: menu
 description: "Retired HackTheBox Machine Write-ups"
 header-img: "chals/htb/htb.png"
-tags: [HackTheBox, htb, boot2root, solutions, solution, writeup, write-up, machines, machine, linux, windows, openbsd, stratosphere, poison, canape, sunday, devoops, tartarsauce, jerry, hawk, active, waldo, mischief, teacher, irked, lightweight, chaos, help, flujab, friendzone, ctf, luke, kryptos, swagshop, writeup, ellingson, safe, pentest, pentesting, penetration testing]
+tags: [AI,RE]
 boxes: [
-    [AI, "", "./boxes/14_AI.html", orange, Linux, 10.10.10.163, 30 pts,  "Dec 16, 2018"],
+    [AI, "", "./boxes/14_AI.html", orange, Linux, 10.10.10.163, 30 pts,  "Jan 25, 2020"],
+    [RE, "", "./boxes/2_RE.html", red, Windows, 10.10.10.144, 40 pts, "Feb 1, 2020"],
 ]
 ---
 
