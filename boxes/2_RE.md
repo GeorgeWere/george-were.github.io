@@ -52,3 +52,7 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 78.62 seconds
 ```
+- We have two ports open:
+    * Port 80 :
+        * Its banner tells us its Windows box running __IIS__ version __httpd 10.0__ which is most likely a [windows server 2016](https://port135.com/2015/07/24/a-summary-of-iis-versions/) box
+        
