@@ -21,4 +21,34 @@ tags: [hackthebox, htb, re, ai]
 
 ---
 
+-This was a really fun box and my first attempt at reverse engineering. I did a lot of research and sleepless nights. Finally it paid off. Without further ado, lets jump in.
+
 ## PART 1 : INITIAL RECON
+
+- As usually we'll begin with our nmap using defult scripts and enumerate versions.
+
+```console
+:~/CTF/HTB/boxes/RE# nmap -sC -sV -oA nmap/re 10.10.10.144
+Starting Nmap 7.80 ( https://nmap.org ) at 2020-02-13 05:07 EST
+Nmap scan report for 10.10.10.144
+Host is up (0.18s latency).
+Not shown: 998 filtered ports
+PORT    STATE SERVICE       VERSION
+80/tcp  open  http          Microsoft IIS httpd 10.0
+|_http-server-header: Microsoft-IIS/10.0
+|_http-title: Visit reblog.htb
+445/tcp open  microsoft-ds?
+Service Info: OS: Windows; CPE: cpe:/o:microsoft:windows
+
+Host script results:
+|_clock-skew: 1h06m32s
+| smb2-security-mode:
+|   2.02:
+|_    Message signing enabled but not required
+| smb2-time:
+|   date: 2020-02-13T11:14:52
+|_  start_date: N/A
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 78.62 seconds
+```
