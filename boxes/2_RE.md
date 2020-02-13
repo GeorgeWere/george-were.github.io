@@ -7,6 +7,8 @@ tags: [hackthebox, htb, re, ai]
 ---
 # HTB AI (10.10.10.144) MACHINE WRITE-UP
 
+- This was a really fun box and my first attempt at reverse engineering. I did a lot of research and sleepless nights. Finally it paid off. Without further ado, lets jump in.
+
 ![2 RE Icon](./screenshots/2_RE/2_icon.png)
 ---
 
@@ -20,8 +22,6 @@ tags: [hackthebox, htb, re, ai]
 * [PART 6 : PRIVILEGE ESCALATION (monitor -&gt; root)](#part-6--privilege-escalation-monitor---root)
 
 ---
-
-- This was a really fun box and my first attempt at reverse engineering. I did a lot of research and sleepless nights. Finally it paid off. Without further ado, lets jump in.
 
 ## PART 1 : INITIAL RECON
 
