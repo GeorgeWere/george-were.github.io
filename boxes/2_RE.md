@@ -61,7 +61,8 @@ Nmap done: 1 IP address (1 host up) scanned in 78.62 seconds
         * It is also leaking a title __reblog.htb__ which could be a potential host name hence I will add that to the __/etc/hosts__
 
     * Port 445 : SMB
-        * We have a *clock-skew of 1h06m32s* so if we are to do any form of time sensitive attacks such as kerberos we will have to sync our times.
+
+        *  We have a *clock-skew of 1h06m32s* so if we are to do any form of time sensitive attacks such as kerberos we will have to sync our times.
 
 ---
 
