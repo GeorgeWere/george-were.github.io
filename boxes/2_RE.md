@@ -117,7 +117,7 @@ Nmap done: 1 IP address (1 host up) scanned in 78.62 seconds
         Disk                                                    Permissions     Comment
         ----                                                    -----------     -------
         .                                                  
-...REDUCTED...
+        ...REDUCTED...
         IPC$                                                    READ ONLY       Remote IPC
         .                                                  
         dr--r--r--                0 Fri Feb 14 04:12:30 2020    .
