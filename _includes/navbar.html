@@ -7,7 +7,7 @@
   > <a href="/">whoami</a>
   {% endif %}
 </div>
-<div style="padding-top:10px">  
+<div style="padding-top:10px">
   >  <a href="/htb.html">
     {% if page.url contains "/boxes/" or page.url contains "htb.html" %}
     <strong style="color:orange">htb writeups</strong>
@@ -34,4 +34,12 @@
     {% endif %}
   </a>
 </div>
-
+<div style="padding-top:10px">
+  > <a href="/projects.html">
+    {% if page.url contains "/malware/" or page.url contains "malware.html" %}
+    <strong style="color:orange">Malware Analysis</strong>
+    {% else %}
+    projects
+    {% endif %}
+  </a>
+</div>
