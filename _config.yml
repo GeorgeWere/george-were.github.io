@@ -23,6 +23,6 @@ htb_chls: [
   [web, Web]
 ]
 
-htb_menu: [[14, AI], [2, RE]]
+htb_menu: [[14, AI], [2, RE], [3, JSON], [4, Zetta]]
 
 prj_menu: [[CORS, CORS], [elastalerter.py, elastalerter], [Event Forwarder, Windows-Event-Collector], [Custom .evtx Files, Custom-evtx-Logfiles], [Double Hop Bypass, PTT-PSRemoting]]
