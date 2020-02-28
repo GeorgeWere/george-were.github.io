@@ -26,7 +26,7 @@ tags: [hackthebox, htb, re, ai]
 
 ## PART 1 : INITIAL RECON
 
-- As usually we'll begin with our nmap using defult scripts and enumerate versions.
+- As usually we'll begin with our nmap using default scripts and enumerate versions.
 
 ```console
 :~/CTF/HTB/boxes/RE# nmap -sC -sV -oA nmap/re 10.10.10.144
