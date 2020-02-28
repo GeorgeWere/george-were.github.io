@@ -1,7 +1,7 @@
 ---
 layout: menu
 title: "HTB JSON"
-description: "10.10.10.158 | 40 pts"
+description: "10.10.10.158 | 30 pts"
 header-img: "boxes/screenshots/3_JSON/icon.png"
 tags: [hackthebox, htb, re, ai, JSON]
 ---
