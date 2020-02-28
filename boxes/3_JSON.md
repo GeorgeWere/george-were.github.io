@@ -2,10 +2,31 @@
 layout: menu
 title: "HTB JSON"
 description: "10.10.10.158 | 40 pts"
-header-img: "boxes/screenshots/2_RE/re.png"
+header-img: "boxes/screenshots/3_JSON/icon.png"
 tags: [hackthebox, htb, re, ai, JSON]
 ---
 # HTB JSON (10.10.10.158) MACHINE WRITE-UP
+
+- This was a really fun box and my first attempt at reverse engineering. I did a lot of research and sleepless nights. Finally it paid off. Without further ado, lets jump in.
+
+![2 JSON Icon](./screenshots/3_JSON/icon.png)
+---
+
+### TABLE OF CONTENTS
+* [PART 1 : INITIAL RECON](#part-1--initial-recon)
+* [PART 2 : PORT ENUMERATION](#part-2--port-enumeration)
+  * [TCP PORT 80 (http)](#tcp-port-80-http)
+  * [TCP PORT 445 (http)](#tcp-port-445-SMB)
+* [PART 3 : EXPLOITATION](#part-3--exploitation)
+* [PART 4 : GENERATE USER SHELL](#part-4--generate-user-shell)
+* [PART 5 : LATERAL MOVEMENT (nobody -&gt; monitor)](#part-5--lateral-movement-nobody---monitor)
+* [PART 6 : PRIVILEGE ESCALATION (monitor -&gt; root)](#part-6--privilege-escalation-monitor---root)
+
+---
+
+## PART 1 : INITIAL RECON
+
+- As usually we'll begin with our nmap using defult scripts and enumerate versions.
 
 ```console
 root@kali:~/CTF/HTB/boxes/JSON# nmap -sC -sV -oA nmap/json 10.10.10.158
@@ -52,3 +73,5 @@ Host script results:
 Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
 Nmap done: 1 IP address (1 host up) scanned in 94.53 seconds
 ```
+
+- We see we have a bunch of ports open, we however shall have a look at below ports :
