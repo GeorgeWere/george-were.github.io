@@ -1,6 +1,6 @@
 ---
 layout: menu
-title: "HTB Safe"
+title: "HTB RE"
 description: "10.10.10.144 | 40 pts"
 header-img: "boxes/screenshots/2_RE/re.png"
 tags: [hackthebox, htb, re, ai]
@@ -157,7 +157,7 @@ rule metasploit
 
 - Lets check out our interesting page *ods Phishing Attempts* . Did a little research on *ods* which stands for open document spreadsheet that's like the open source version of excel.
 
-_ Lets install libreoffice
+- Lets install libreoffice
 
 ```
 apt install libreoffice
@@ -248,4 +248,4 @@ End Sub
 ```
 - And we get a shell as Luke
 
-- We get our first
+- We get our first flag too.
