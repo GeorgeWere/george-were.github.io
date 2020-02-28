@@ -26,7 +26,7 @@ tags: [hackthebox, htb, re, ai, JSON]
 
 ## PART 1 : INITIAL RECON
 
-- As usually we'll begin with our nmap using defult scripts and enumerate versions.
+- As usually we'll begin with our nmap using default scripts and enumerate versions.
 
 ```console
 root@kali:~/CTF/HTB/boxes/JSON# nmap -sC -sV -oA nmap/json 10.10.10.158
