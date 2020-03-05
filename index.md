@@ -1,6 +1,6 @@
 ---
 layout: menu
-title: whoami
+title: Latest News
 description: "I am George Were a security enthusiast and network engineer by profession."
 tags: [whoami, George Were, htb, hackthebox, ctf]
 ---
