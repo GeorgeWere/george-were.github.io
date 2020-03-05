@@ -43,3 +43,12 @@
     {% endif %}
   </a>
 </div>
+<div style="padding-top:10px">
+  > <a href="/index.html">
+    {% if page.url contains "/index/" or page.url contains "index.html" %}
+    <strong style="color:orange">Latest News</strong>
+    {% else %}
+    Latest News
+    {% endif %}
+  </a>
+</div>
