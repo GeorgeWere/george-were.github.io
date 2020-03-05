@@ -2,9 +2,9 @@
 
 <div style="padding-top:10px">
   {% if page.url == "/"  %}
-  > <strong style="color:orange">whoami</strong>
+  > <strong style="color:orange">Latest News</strong>
   {% else %}
-  > <a href="/">whoami</a>
+  > <a href="/">Latest News</a>
   {% endif %}
 </div>
 <div style="padding-top:10px">
@@ -40,15 +40,6 @@
     <strong style="color:orange">Malware Analysis</strong>
     {% else %}
     Malware Analysis
-    {% endif %}
-  </a>
-</div>
-<div style="padding-top:10px">
-  > <a href="/index.html">
-    {% if page.url contains "/index/" or page.url contains "index.html" %}
-    <strong style="color:orange">Latest News</strong>
-    {% else %}
-    Latest News
     {% endif %}
   </a>
 </div>
