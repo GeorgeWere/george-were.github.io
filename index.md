@@ -11,4 +11,4 @@ tags: [whoami, George Were, htb, hackthebox, ctf]
 
 ---
 
-## <span style="color:red">$ achievements</span>
+## <span style="color:red">$ Latest News and Hack Stories</span>
