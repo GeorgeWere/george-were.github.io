@@ -5,7 +5,7 @@ description: "This is a serious vulnerability in Tomcat which can be exploited t
 tags: [Tomcat, Apache, RCE]
 ---
 
-# <span style="color:red">Cross Origin Resource Sharing (CORS)</span>
+# <span style="color:red">Apache Tomcat serious vulnerability</span>
 
 ---
 
