@@ -12,6 +12,9 @@ tags: [Linux, RCE, pppD]
 
 ## CVE-2020-8597: PPP Daemon RCE Vulnerability.
 
+![PPP Daemon](./screenshots/pppd/icon.png)
+
+
 - A critical __Buffer Overflow Vulnerability__ was discovered in the [pppD](https://linux.die.net/man/8/pppd) by security researcher  Ilja Van Sprundel which can let remote attackers exploit the linux systems remotely and gain the root-level previleges.
 
 - This vulnerability resides in the Extensible Authentication Protocol(EAP) packet. An unauthenticated remote attacker may be able to cause a [stack buffer overflow](https://blog.rapid7.com/2019/02/19/stack-based-buffer-overflow-attacks-what-you-need-to-know/) by exploiting this vulnerability allowing them to remotely take over the code execution of a process and perform arbitrary code execution on the target system.
