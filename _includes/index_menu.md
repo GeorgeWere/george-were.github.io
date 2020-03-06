@@ -1,4 +1,4 @@
-<h2 style="margin-bottom:0; padding-top: 20px">[INDEX]</h2>
+<h2 style="margin-bottom:0; padding-top: 20px">[LATEST NEWS]</h2>
 
 {% for index in site.index_menu %}
 <div style="padding-top:10px">
