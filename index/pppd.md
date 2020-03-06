@@ -27,17 +27,17 @@ tags: [Linux, RCE, pppD]
 
 - This Vulnerability affects most popular Linux distributions.
 
-... [Red Hat Enterprise Linux](https://securityaffairs.co/wordpress/99043/hacking/linux-rce-ppp-daemon-flaw.html)
+    ... [Red Hat Enterprise Linux](https://securityaffairs.co/wordpress/99043/hacking/linux-rce-ppp-daemon-flaw.html)
 
-... [Debian](https://www.debian.org/security/2020/dsa-4632)
+    ... [Debian](https://www.debian.org/security/2020/dsa-4632)
 
-... [Ubuntu](https://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8597.html)
+    ... [Ubuntu](https://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8597.html)
 
-... [Fedora](https://access.redhat.com/security/cve/cve-2020-8597)
+    ... [Fedora](https://access.redhat.com/security/cve/cve-2020-8597)
 
-... [NetBSD](https://cvsweb.netbsd.org/bsdweb.cgi/src/external/bsd/ppp/dist/pppd/eap.c?only_with_tag=MAIN)
+    ... [NetBSD](https://cvsweb.netbsd.org/bsdweb.cgi/src/external/bsd/ppp/dist/pppd/eap.c?only_with_tag=MAIN)
 
-... [SUSE Linux](https://www.suse.com/security/cve/CVE-2020-8597/)
+    ... [SUSE Linux](https://www.suse.com/security/cve/CVE-2020-8597/)
 
 
 ## Solution
@@ -49,7 +49,7 @@ tags: [Linux, RCE, pppD]
 ## References
 
 ```console
- https://git.savannah.nongnu.org/cgit/lwip.git/commit/?id=2ee3cbe69c6d2805e64e7cac2a1c1706e49ffd86
+https://git.savannah.nongnu.org/cgit/lwip.git/commit/?id=2ee3cbe69c6d2805e64e7cac2a1c1706e49ffd86
 
 https://nvd.nist.gov/vuln/detail/CVE-2020-8597
 
