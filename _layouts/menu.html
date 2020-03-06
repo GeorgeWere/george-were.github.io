@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
-    
+
     {% for tag in page.tags %}
     <meta property="article:tag" content="{{ tag }}" />
-    {% endfor %}    
+    {% endfor %}
 
     <meta name="twitter:card" content="summary"/>
     <meta name="twitter:title" content="{%if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
     <meta name="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
- 
+
 
     {% if page.header-img %}
     <meta property="og:image" content="{{ site.url }}/{{ page.header-img }}" />
@@ -37,11 +37,11 @@
 	width: 0px;
 	visibility: hidden;
       }
-      .header .title { 
+      .header .title {
 	padding-left: 69px;
 	vertical-align: middle;
       }
-      .header .title h2 { margin: 0; } 
+      .header .title h2 { margin: 0; }
 
       .container {
 	max-width: 1200px;
@@ -56,7 +56,7 @@
 	top: 0;
         width: 230px;
       }
-      .openbtn { 
+      .openbtn {
 	color:#b5e853;
 	font-size:30px;
 	cursor:pointer
@@ -72,7 +72,7 @@
 	margin-left:50px;
 	visibility:hidden;
       }
-      
+
       .ctf_content {
         margin-left: 250px;
 	padding-bottom: 5px;
@@ -89,13 +89,13 @@
       .ctf_content table { padding: 0 15px; }
 
       #main_content h1 { padding: 20px 0px 0px 8px; }
-      #main_content h2, p, pre { 
+      #main_content h2, p, pre {
 	padding-right:10px;
-	padding-left:15px; 
+	padding-left:15px;
       }
-      #main_content h4 { 
-        margin: 20px 0px 10px 0px; 
-        padding-left: 25px; 
+      #main_content h4 {
+        margin: 20px 0px 10px 0px;
+        padding-left: 25px;
       }
       #main_content ol, ul { margin: 0 0 0 10px; }
 
@@ -106,7 +106,7 @@
         padding-top:28px;
         width:55%;
       }
-      
+
       @media screen and (min-width: 801px) {
 	.ctf_content {
           margin-left: 250px;
@@ -141,12 +141,12 @@
 	  padding: 0;
           transition: 0.5s;
 	}
-	.sidebar h2 { 
-	  font-size: 18px; 
+	.sidebar h2 {
+	  font-size: 18px;
 	  padding: 10px 10px 5px 10px;
 	}
-	.sidebar div { 
-	  font-size: 15px; 
+	.sidebar div {
+	  font-size: 15px;
 	  padding: 5px 10px 5px 10px;
 	}
 	.closebtn { visibility:visible; }
@@ -162,7 +162,7 @@
 	  max-width: 100%;
 	  padding: 0 10px 0 0;
         }
-	.ctf_content table { 
+	.ctf_content table {
 	  margin: 0 10px 0px -8px;
 	  min-width: 800px;
 	}
@@ -212,7 +212,7 @@
   <body>
     <div class="container">
        <div id="sidebar" class="sidebar">
-         <span class="closebtn" onclick="closeNav()">&times;</span>      
+         <span class="closebtn" onclick="closeNav()">&times;</span>
 	 <div>{% include navbar.html %}</div>
 	 <div style="padding-bottom:20px">
            {% if page.url contains "/chals/" %}
@@ -220,8 +220,8 @@
              {% include ctf_menu.md %}
 	   {% elsif page.url contains "/boxes/" %}
              {% include htb_menu.md %}
-	   {% elsif page.url contains "/prjct/" %}
-             {% include prj_menu.md %}
+	   {% elsif page.url contains "/index/" %}
+             {% include index_menu.md %}
 	   {% endif %}
 	 </div>
        </div>
@@ -249,7 +249,7 @@
       function closeNav() {
         document.getElementById("sidebar").removeAttribute("style");
         document.getElementById("content").removeAttribute("style");
-      } 
+      }
     </script>
 
  {% if site.google_analytics %}
