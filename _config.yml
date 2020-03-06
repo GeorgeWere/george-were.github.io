@@ -8,7 +8,7 @@ url: "https://georgewere.github.io/"
 plugins:
   - jekyll-sitemap
 
-index_menu: [[ghost, ghost], [pppD, vulnerability]]
+index_menu: [[ghost, ghost], [pppD, pppD]]
 
 ctf_menu: [
   [XMASCTF, 2019, X-MAS CTF, "Sat, 14 Dec 2019, 03:00 PHT", "Sat, 21 Dec 2019, 03:00 PHT"],
