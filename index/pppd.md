@@ -6,7 +6,7 @@ tags: [Linux, RCE, pppD]
 ---
 
 # <span style="color:red">Point-to-Point Protocol(PPP) Daemon RCE Vulnerability</span>
-###### posted on: 3/6/2020 5:14pm
+ ###### posted on: 3/6/2020 5:14pm
 
 ---
 
