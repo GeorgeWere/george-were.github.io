@@ -1,7 +1,8 @@
 <h2 style="margin-bottom:0; padding-top:20px">[SITE PAGES]</h2>
 
 <div style="padding-top:10px">
-  {% if page.url == "/"  %}
+    <a href="/index.html">
+  {% if page.url contains "/index/" or page.url contains "index.html" %}
   > <strong style="color:orange">Latest News</strong>
   {% else %}
   > <a href="/">Latest News</a>
