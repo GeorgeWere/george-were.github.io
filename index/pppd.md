@@ -11,9 +11,9 @@ tags: [Linux, RCE, pppD]
 
 ## CVE-2020-8597: PPP Daemon RCE Vulnerability.
 
-- A critical [Buffer Overflow Vulnerability](https://blog.rapid7.com/2019/02/19/stack-based-buffer-overflow-attacks-what-you-need-to-know/) was discovered in the [pppD](https://linux.die.net/man/8/pppd) by security researcher  Ilja Van Sprundel which can let remote attackers exploit the linux systems remotely and gain the root-level previleges.
+- A critical Buffer Overflow Vulnerability was discovered in the [pppD](https://linux.die.net/man/8/pppd) by security researcher  Ilja Van Sprundel which can let remote attackers exploit the linux systems remotely and gain the root-level previleges.
 
-- This vulnerability resides in the Extensible Authentication Protocol(EAP) packet. An unathenticated remote attacker may be able to cause a stack buffer overflow by exploiting this vulnerability allowing them to remotely take over the code execution of a process and perform arbitrary code execution on the target system.
+- This vulnerability resides in the Extensible Authentication Protocol(EAP) packet. An unauthenticated remote attacker may be able to cause a [stack buffer overflow](https://blog.rapid7.com/2019/02/19/stack-based-buffer-overflow-attacks-what-you-need-to-know/) by exploiting this vulnerability allowing them to remotely take over the code execution of a process and perform arbitrary code execution on the target system.
 
 - The post __Critical Vulnerability in ppp Daemon Let Hackers Remotely Exploit the Linux Systems & Gain Root Access__ appeared first on [GBHackers](https://gbhackers.com/) and its being tracked as __CVE-2020-8597__ with a __9.3__ CVE score. it affects PPP Daemon versions 2.4.2 through 2.4.8.
 
