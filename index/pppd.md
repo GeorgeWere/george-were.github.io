@@ -25,10 +25,34 @@ tags: [Linux, RCE, pppD]
 
 - Ilja Van Sprundel pointed out that pppd runs with high privileges and works in conjuction with kernel drivers hence the reason an attacker can execute arbitrary code with high privileges.
 
-- This Vulnerability affects most popular Linux distributions
+- This Vulnerability affects most popular Linux distributions.
+
+..* [Red Hat Enterprise Linux](https://securityaffairs.co/wordpress/99043/hacking/linux-rce-ppp-daemon-flaw.html)
+
+..* [Debian](https://www.debian.org/security/2020/dsa-4632)
+
+..* [Ubuntu](https://people.canonical.com/~ubuntu-security/cve/2020/CVE-2020-8597.html)
+
+..* [Fedora](https://access.redhat.com/security/cve/cve-2020-8597)
+
+..* [NetBSD](https://cvsweb.netbsd.org/bsdweb.cgi/src/external/bsd/ppp/dist/pppd/eap.c?only_with_tag=MAIN)
+
+..* [SUSE Linux](https://www.suse.com/security/cve/CVE-2020-8597/)
 
 ## Solution
 
-- Update your software with the latest available patches provided by your software vendor
+- Update your software with the latest available patches provided by your software vendor.
 
 > “It is incorrect to assume that pppd is not vulnerable if EAP is not enabled or EAP has not been negotiated by a remote peer using a secret or passphrase. This is due to the fact that an authenticated attacker may still be able to send unsolicited EAP packet to trigger the buffer overflow.” continues the advisory.
+
+## References
+
+..* https://git.savannah.nongnu.org/cgit/lwip.git/commit/?id=2ee3cbe69c6d2805e64e7cac2a1c1706e49ffd86
+
+..* https://nvd.nist.gov/vuln/detail/CVE-2020-8597
+
+..* https://vulners.com/cve/CVE-2020-8597
+
+..* https://github.com/paulusmack/ppp/commit/8d45443bb5c9372b4c6a362ba2f443d41c5636af
+
+..* https://www.itsecuritynews.info/critical-vulnerability-in-ppp-daemon-let-hackers-remotely-exploit-the-linux-systems-gain-root-access/
