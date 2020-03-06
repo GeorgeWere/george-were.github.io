@@ -27,7 +27,7 @@ tags: [Linux, RCE, pppD]
 
 - This Vulnerability affects most popular Linux distributions.
 
-    ... [Red Hat Enterprise Linux](https://securityaffairs.co/wordpress/99043/hacking/linux-rce-ppp-daemon-flaw.html)
+    ... [Red Hat Enterprise Linux](https://www.debian.org/security/2020/dsa-4632)
 
     ... [Debian](https://www.debian.org/security/2020/dsa-4632)
 
