@@ -3,6 +3,7 @@ layout: menu
 title: "pppD Vulnerability"
 description: "A critical Buffer Overflow vulnerability discovered in the pppD could let remote attackers exploit the Linux systems to gain the root-level privileges."
 tags: [Linux, RCE, pppD]
+date: "Posted on `r format(Sys.time(), '%d %B, %Y')`"
 ---
 
 # <span style="color:red">Point-to-Point Protocol(PPP) Daemon RCE Vulnerability</span>
