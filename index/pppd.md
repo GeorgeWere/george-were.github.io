@@ -3,12 +3,12 @@ layout: menu
 title: "pppD Vulnerability"
 description: "A critical Buffer Overflow vulnerability discovered in the pppD could let remote attackers exploit the Linux systems to gain the root-level privileges."
 tags: [Linux, RCE, pppD]
-date: "Posted on `r format(Sys.time(), '%d %B, %Y')`"
+
 ---
 
 # <span style="color:red">Point-to-Point Protocol(PPP) Daemon RCE Vulnerability</span>
   posted on: 3/6/2020 5:14pm
-
+date: "Posted on `r format(Sys.time(), '%d %B, %Y')`"
 ---
 
 ## CVE-2020-8597: PPP Daemon RCE Vulnerability.
