@@ -74,4 +74,59 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 94.53 seconds
 ```
 
-- We see we have a bunch of ports open, we however shall have a look at below ports :
+- We see we have a bunch of ports open.
+- Lets check them out : We start with FTP using anonymous login.
+
+```
+root@kali:~/CTF/HTB/vpn# ftp 10.10.10.158
+Connected to 10.10.10.158.
+220-FileZilla Server 0.9.60 beta
+220-written by Tim Kosse (tim.kosse@filezilla-project.org)
+220 Please visit https://filezilla-project.org/
+Name (10.10.10.158:root): anonymous
+331 Password required for anonymous
+Password:
+530 Login or password incorrect!
+Login failed.
+Remote system type is UNIX.
+ftp>
+```
+- Anonymous login was unsuccessful but we get the version number (220-FileZilla Server 0.9.60 beta)
+
+- Next we have http on port 80 and it's running Microsoft II httpd 8.5 with a title *Json HTB*
+
+- We also see a bunch of RPC ports open
+
+- We have a clock-skew of 3h50m50s, if we do kerberos we will have to make sure we sync the time.
+
+- Lets take a look at the web page.
+
+## PART 2 : PORT ENUMERATION
+
+### TCP PORT 80 (http)
+
+- As soon as i get to the page it redirects me to http://10.10.10.158/login.html. Hmm first thought is to stop the redirect and examine the pages
+
+- Nothing too interesting but a bunch of dead links everywhere.
+
+- Lets try loggin in wwith admin admin and send it to burpsuite just to see how the request looks like.
+
+![2 Burpsuite intercept](./screenshots/3_JSON/burp.png)
+
+- Its Json.
+
+- Now lets see how the server responds.
+
+![Server response](./screenshots/3_JSON/auth_cookie.png)
+
+- It responds with an Auth cookie. Lets see what this cookie is.
+```console
+/CTF/HTB/boxes/JSON# echo -n eyJJZCI6MSwiVXNlck5hbWUiOiJhZG1pbiIsIlBhc3N3b3JkIjoiMjEyMzJmMjk3YTU3YTVhNzQzODk0YTBlNGE4MDFmYzMiLCJOYW1lIjoiVXNlciBBZG1pbiBIVEIiLCJSb2wiOiJBZG1pbmlzdHJhdG9yIn0= | base64 -d
+{"Id":1,"UserName":"admin","Password":"21232f297a57a5a743894a0e4a801fc3","Name":"User Admin HTB","Rol":"Administrator"}
+```
+- We get a cookies that has a bunch of Json
+- So lets just forward this request and see what happens. And we get a successful login as admin but there is nothing much we can do.
+
+
+oot@kali:~/CTF/HTB/boxes/JSON# echo -n 'checkoutmysite' | base64
+Y2hlY2tvdXRteXNpdGU=
