@@ -93,7 +93,7 @@ ftp>
 ```
 - Anonymous login was unsuccessful but we get the version number (220-FileZilla Server 0.9.60 beta)
 
-- Next we have http on port 80 and it's running Microsoft II httpd 8.5 with a title *Json HTB*
+- Next we have http on port 80 and it's running Microsoft II httpd 8.5 with a title **Json HTB**
 
 - We also see a bunch of RPC ports open
 
