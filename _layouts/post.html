@@ -13,3 +13,6 @@ layout: default
   <small>tags: <em>{{ page.tags | join: "</em> - <em>" }}</em></small>
   {% endif %}
 
+{% if page.date %}
+  <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date_to_string }}</time>
+  {% endif %}
