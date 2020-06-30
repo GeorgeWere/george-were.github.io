@@ -118,13 +118,14 @@ ftp>
 
 ![Server response](./screenshots/3_JSON/auth_cookie.png)
 
-- It responds with an Auth cookie. Lets see what this cookie is.
+- It responds with an Auth cookie. decoding the cookie gives us a bunch of Json
+
 ```console
 /CTF/HTB/boxes/JSON# echo -n eyJJZCI6MSwiVXNlck5hbWUiOiJhZG1pbiIsIlBhc3N3b3JkIjoiMjEyMzJmMjk3YTU3YTVhNzQzODk0YTBlNGE4MDFmYzMiLCJOYW1lIjoiVXNlciBBZG1pbiBIVEIiLCJSb2wiOiJBZG1pbmlzdHJhdG9yIn0= | base64 -d
 {"Id":1,"UserName":"admin","Password":"21232f297a57a5a743894a0e4a801fc3","Name":"User Admin HTB","Rol":"Administrator"}
 ```
-- We get a cookie that has a bunch of Json
-- So lets just forward this request and see what happens. And we get a successful login as admin but there is nothing much we can do.
+
+- Forwarding this request to the browser we get a successful login as admin but there is nothing much we can do.
 
 - Taking a closer look I note the website authenticates the login using the __/api/account__ endpoint and the response is in a JSON format, giving some of the attributes of the user.
 ```
