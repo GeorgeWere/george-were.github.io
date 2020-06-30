@@ -75,7 +75,7 @@ Nmap done: 1 IP address (1 host up) scanned in 94.53 seconds
 ```
 
 - We see we have a bunch of ports open.
-- Lets check them out : We start with FTP using anonymous login.
+- Lets check them out : We start with FTP and test for anonymous login.
 
 ```
 root@kali:~/CTF/HTB/vpn# ftp 10.10.10.158
