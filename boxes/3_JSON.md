@@ -109,11 +109,10 @@ ftp>
 
 - Nothing too interesting but a bunch of dead links everywhere.
 
-- Lets try loggin in wwith admin admin and send it to burpsuite just to see how the request looks like.
+- Lets try loggin in wwith admin admin and send it to burpsuite just to see how the request looks like. Its Json.
 
 ![2 Burpsuite intercept](./screenshots/3_JSON/burp.png)
 
-- Its Json.
 
 - Now lets see how the server responds.
 
