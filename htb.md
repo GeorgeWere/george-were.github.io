@@ -9,7 +9,8 @@ boxes: [
     [RE, "", "./boxes/2_RE.html", red, Windows, 10.10.10.144, 40 pts, "Feb 1, 2020"],
     [JSON, "", "./boxes/3_JSON.html", orange, Windows, 10.10.10.158, 30 pts, "Feb 15, 2020"],
     [Zetta, "", "./boxes/4_Zetta.html", red, Linux, 10.10.10.156, 40 pts, "Feb 22, 2020"],
-    [Blame, "", "./boxes/1_Blame.html", red, Linux, 10.10.10.156, 40 pts, "Feb 22, 2020"],
+    [Blame, "", "./boxes/1_Blame.html", red, Linux, 10.10.10.3, 20 pts, "May 26, 2017"],
+
 ]
 ---
 
