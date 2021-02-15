@@ -3,12 +3,13 @@ title: "HTB WRITE-UPS"
 layout: menu
 description: "Retired HackTheBox Machine Write-ups"
 header-img: "chals/htb/htb.png"
-tags: [AI,RE]
+tags: [AI,RE,JSON,Zetta,Blame]
 boxes: [
     [AI, "", "./boxes/14_AI.html", orange, Linux, 10.10.10.163, 30 pts,  "Jan 25, 2020"],
     [RE, "", "./boxes/2_RE.html", red, Windows, 10.10.10.144, 40 pts, "Feb 1, 2020"],
     [JSON, "", "./boxes/3_JSON.html", orange, Windows, 10.10.10.158, 30 pts, "Feb 15, 2020"],
     [Zetta, "", "./boxes/4_Zetta.html", red, Linux, 10.10.10.156, 40 pts, "Feb 22, 2020"],
+    [Blame, "", "./boxes/1_Blame.html", red, Linux, 10.10.10.156, 40 pts, "Feb 22, 2020"],
 ]
 ---
 
