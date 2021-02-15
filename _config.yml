@@ -20,6 +20,6 @@ htb_chls: [
   [web, Web]
 ]
 
-htb_menu: [[14, AI], [2, RE], [3, JSON], [4, Zetta]]
+htb_menu: [[14, AI], [2, RE], [3, JSON], [4, Zetta], [1, Blame]]
 
 malware_menu: []
